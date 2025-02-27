@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+    {% for cartella in cartelle %}
+    <li class="py-2 sm:py-2">
+       <div class="flex items-center space-x-4 rtl:space-x-reverse">
+          <div class="shrink-0">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
+              </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                {{ cartella }}
+             </p>
+          </div>
+          <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+             $320
+          </div>
+       </div>
+    </li>
+    {% endfor %}    
+ </ul>
+ 
+
+{% endblock %}
